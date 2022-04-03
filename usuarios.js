@@ -30,12 +30,13 @@ const nuevoUsuario = async () => {
 
 //Mediante el push llenammos el arreglo que esta en .json , con los datos obtenidos (de la consulta de la API) de nuevoUsuario()
 const guardarUsuario = (usuario) => {
+  //utilizar el contendio del usuario.json se convierte a objeto json
   const usuariosJSON = JSON.parse(fs.readFileSync('usuarios.json', 'utf-8'));
-  //accediendo a la propiedad usuario y llenamos con push
+//accediendo a la propiedad roommate del objeto del archivo roommate.json y llenamos con push
   usuariosJSON.usuarios.push(usuario);
   //sobre escribiendo .json el cual adquiere los nuevo usuarios
   fs.writeFileSync('usuarios.json', JSON.stringify(usuariosJSON));
 };
-//Archvi externo del Sever
+//Archivo externo del Server
 //Se exporta el objetengo que este dentro
 module.exports = { nuevoUsuario, guardarUsuario };
