@@ -11,7 +11,7 @@ const requestListener = (req, res) => {
     res.setHeader('content-type', 'text/html');
     res.end(fs.readFileSync('index.html', 'utf-8'));
   }
-  //Ruta Usuarios
+  //RUTA USUARIOS - POST (Creamos el nommbre del usuario/participante en el archivo usuarios.js)
   //Metodo POST, esta ruta ejecuta una funcion que emita instruccion
   //Para hacer  una consulta asincrona a traves de axios en la api random.user
   //Por lo cual, pasamos a programacion modular (usuario.js)
@@ -29,7 +29,7 @@ const requestListener = (req, res) => {
         console.log('Error en el registro de un usuario random ', e);
       });
   }
-  //RUTA AGREGAR NUEVOS PARTICIPANTES
+  //RUTA PARTICIPANTE - GET (Para visualizar el nombre del participante en html)
   if (req.url.startsWith('/usuarios') && req.method == 'GET') {
     res.setHeader('Content-Type', 'application/json');
     res.end(fs.readFileSync('usuarios.json', 'utf-8'));
@@ -41,7 +41,7 @@ const requestListener = (req, res) => {
     res.end(fs.readFileSync('premio.json', 'utf-8'));
   }
 
-  //RUTA CAMBIAR PREMIO (PU)
+  //RUTA CAMBIAR PREMIO (PUT)
   if (req.url.startsWith('/premio') && req.method == 'PUT') {
     // Esta recibiendo un payload, conjunto de datos (nombre e img url)
     let body = '';
