@@ -66,7 +66,7 @@ const requestListener = (req, res) => {
   if (req.url.startsWith('/ganador') && req.method == 'GET') {
     //Logica de Correo se inserta en la logica del Ganador
     const premio = JSON.parse(fs.readFileSync('premio.json', 'utf-8')).nombre;
-    //Guardar en varable usuarios el contenido del archivo.json
+    //Guardar en variable usuarios el contenido del archivo.json
     const usuarios = JSON.parse(
       fs.readFileSync('usuarios.json', 'utf-8')
     ).usuarios;
