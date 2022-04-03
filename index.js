@@ -5,11 +5,11 @@ const { nuevoUsuario, guardarUsuario } = require('./usuarios');
 const { send } = require('./mailer');
 const PORT = 3000;
 const host = 'localhost';
-const open = require('open');
+//const open = require('open');
 
-open(`http://${host}:${PORT}/`, function (err) {
-  if (err) throw err;
-});
+//open(`http://${host}:${PORT}/`, function (err) {
+//  if (err) throw err;
+//});
 const requestListener = (req, res) => {
   if (req.url == '/' && req.method == 'GET') {
     res.setHeader('content-type', 'text/html');
