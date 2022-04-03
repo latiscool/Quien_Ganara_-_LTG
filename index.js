@@ -22,8 +22,8 @@ const requestListener = (req, res) => {
   if (req.url.startsWith('/usuario') && req.method == 'POST') {
     nuevoUsuario()
       .then(async (usuario) => {
-        //Caso exito funcion async, usamos la funcions guardarUsuario
-        // y le pasamos el argumento el usuario nuevo (el objeto completo con las propiedades)
+        //En Caso de exito la funcion async, usamos la funcions guardarUsuario
+        // y le pasamos el argumento el usuario nuevo (el objeto completo con las propiedades, que traee el then())
         guardarUsuario(usuario);
       })
       .catch((e) => {
