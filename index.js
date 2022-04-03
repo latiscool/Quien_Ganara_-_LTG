@@ -25,9 +25,11 @@ const requestListener = (req, res) => {
         //En Caso de exito la funcion async, usamos la funcions guardarUsuario
         // y le pasamos el argumento el usuario nuevo (el objeto completo con las propiedades, que traee el then())
         guardarUsuario(usuario);
+      res.end(JSON.stringify(usuario));
       })
       .catch((e) => {
         res.statusCode = 500;
+       res.end();
         console.log('Error en el registro de un usuario random ', e);
       });
   }
