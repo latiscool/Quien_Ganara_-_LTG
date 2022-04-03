@@ -1,16 +1,17 @@
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
-const fs = require('fs');
+const fs = require('fs'); //persistencia datos
 
 //
 const nuevoUsuario = async () => {
   try {
+    //obtenemos del await (el modelo datos es un objeto con un arrelgo de objetos)
     const { data } = await axios.get('https://randomuser.me/api');
-    //Mediante el metodo, podemoe ver el contenido del objeto y sus propiedades
+    //Mediante el metodo <then(), podemos ver el contenido del objeto y sus propiedades
     // .then((data) => {
     //   console.log(data);
     // });
-    //**Mapeo al primero objeto del arreglo
+    //**Mapeando la primera y unica posicion del arreglo de objeto [0] 
     const usuario = data.results[0];
     const nomUsr = usuario.name;
     //Creando Nuestra estructura de datos (objeto)
