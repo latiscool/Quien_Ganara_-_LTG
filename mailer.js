@@ -35,6 +35,6 @@ const send = async (ganador, correos, premio) => {
   }
 };
 
-send({ nombre: 'Ganador de Prueba' }, [], 'Premio de prueba');
+//send({ nombre: 'Ganador de Prueba' }, [], 'Premio de prueba');
 
 module.exports = { send };
